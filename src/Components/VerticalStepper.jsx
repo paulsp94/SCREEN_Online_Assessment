@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Stepper from '@material-ui/core/Stepper';
@@ -7,12 +7,8 @@ import StepLabel from '@material-ui/core/StepLabel';
 import StepContent from '@material-ui/core/StepContent';
 import Button from '@material-ui/core/Button';
 import Paper from '@material-ui/core/Paper';
-import Select from '@material-ui/core/Select';
-import MenuItem from '@material-ui/core/MenuItem';
-import OutlinedInput from '@material-ui/core/OutlinedInput';
-import FormControl from '@material-ui/core/FormControl';
-import InputLabel from '@material-ui/core/InputLabel';
 import Typography from '@material-ui/core/Typography';
+import StepOne from './StepOne';
 
 const styles = theme => ({
   root: {
@@ -27,10 +23,6 @@ const styles = theme => ({
   },
   resetContainer: {
     padding: theme.spacing.unit * 3
-  },
-  formControl: {
-    width: '150px',
-    margin: 'auto'
   }
 });
 
@@ -44,7 +36,7 @@ function getSteps() {
   ];
 }
 
-class VerticalLinearStepper extends React.Component {
+class VerticalLinearStepper extends Component {
   state = {
     activeStep: 0,
     type: ''
@@ -68,42 +60,10 @@ class VerticalLinearStepper extends React.Component {
     });
   };
 
-  handleChange = event => {
-    this.setState({ type: event.target.value });
-  };
-
   getStepContent = step => {
-    const { classes } = this.props;
-    const { type } = this.state;
     switch (step) {
       case 0:
-        return (
-          <FormControl variant="outlined" className={classes.formControl}>
-            <InputLabel
-              ref={ref => {
-                this.InputLabelRef = ref;
-              }}
-              htmlFor="outlined-project-simple"
-            >
-              Project Type
-            </InputLabel>
-            <Select
-              value={type}
-              onChange={this.handleChange}
-              input={
-                <OutlinedInput
-                  labelWidth="87"
-                  name="project"
-                  id="outlined-project-simple"
-                />
-              }
-            >
-              <MenuItem value={10}>Production</MenuItem>
-              <MenuItem value={20}>Consumtion</MenuItem>
-              <MenuItem value={30}>Disposal</MenuItem>
-            </Select>
-          </FormControl>
-        );
+        return <StepOne />;
       case 1:
         return 'An ad group contains one or more ads which target a shared set of keywords.';
       case 2:
@@ -131,7 +91,7 @@ class VerticalLinearStepper extends React.Component {
             <Step key={label}>
               <StepLabel>{label}</StepLabel>
               <StepContent>
-                <Typography>{this.getStepContent(index)}</Typography>
+                {this.getStepContent(index)}
                 <div className={classes.actionsContainer}>
                   <div>
                     <Button
