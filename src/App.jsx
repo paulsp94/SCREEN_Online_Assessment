@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import Button from '@material-ui/core/Button';
-import { Grid } from '@material-ui/core';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 
 import './App.css';
+import './Components/VerticalStepper';
+import VerticalStepper from './Components/VerticalStepper';
 
 export default class App extends Component {
   constructor(props) {
@@ -44,22 +44,7 @@ export default class App extends Component {
             </Typography>
           </Toolbar>
         </AppBar>
-        <Grid
-          container
-          direction="row"
-          justify="space-evenly"
-          alignItems="center"
-        >
-          <Button color="primary" variant="contained">
-            Production
-          </Button>
-          <Button color="primary" variant="contained">
-            Consumtion
-          </Button>
-          <Button color="primary" variant="contained">
-            Disposal
-          </Button>
-        </Grid>
+        <VerticalStepper />
       </div>
     );
   }
