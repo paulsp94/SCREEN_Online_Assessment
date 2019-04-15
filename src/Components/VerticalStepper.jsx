@@ -27,6 +27,10 @@ const styles = theme => ({
   },
   resetContainer: {
     padding: theme.spacing.unit * 3
+  },
+  formControl: {
+    width: '150px',
+    margin: 'auto'
   }
 });
 
@@ -88,15 +92,12 @@ class VerticalLinearStepper extends React.Component {
               onChange={this.handleChange}
               input={
                 <OutlinedInput
-                  labelWidth="0"
+                  labelWidth="87"
                   name="project"
                   id="outlined-project-simple"
                 />
               }
             >
-              <MenuItem value="">
-                <em>None</em>
-              </MenuItem>
               <MenuItem value={10}>Production</MenuItem>
               <MenuItem value={20}>Consumtion</MenuItem>
               <MenuItem value={30}>Disposal</MenuItem>
