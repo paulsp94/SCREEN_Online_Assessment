@@ -1,19 +1,12 @@
-export const setProjectType = (state, action) => {
+export const setProjectProps = (state = '', action) => {
   switch (action.type) {
-    case SET_TYPE:
+    case 'SET_TYPE':
       return Object.assign({}, state, {
-        type: action.payload
+        type: action.projectType
       });
-    default:
-      return state;
-  }
-};
-
-export const setProjectSubType = (state, action) => {
-  switch (action.type) {
-    case SET_SUBTYPE:
+    case 'SET_SUBTYPE':
       return Object.assign({}, state, {
-        subtype: action.payload
+        subtype: action.subType
       });
     default:
       return state;

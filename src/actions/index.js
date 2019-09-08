@@ -3,7 +3,7 @@ export const setType = projectType => ({
   projectType
 });
 
-export const setVisibilityFilter = subType => ({
+export const setSubType = subType => ({
   type: 'SET_SUBTYPE',
   subType
 });

@@ -1,4 +1,4 @@
 import { combineReducers } from 'redux';
-import { setProjectType, setProjectSubType } from './projectReducer';
+import { setProjectProps } from './projectReducer';
 
-export default combineReducers({ setProjectType, setProjectSubType });
+export default combineReducers({ setProjectProps });
