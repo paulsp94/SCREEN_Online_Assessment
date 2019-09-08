@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import {
   FormControl,
   Select,
@@ -26,6 +27,7 @@ const styles = () => ({
     margin: 'auto'
   }
 });
+
 class StepOne extends Component {
   constructor(props) {
     super(props);
@@ -125,4 +127,4 @@ class StepOne extends Component {
   }
 }
 
-export default withStyles(styles)(StepOne);
+export default withStyles(styles)(connect(StepOne));
