@@ -15,16 +15,18 @@ import { setType, setSubType } from '../actions';
 
 const styles = () => ({
   formTypeControl: {
-    width: '150px',
+    width: '10%',
     margin: 'auto'
   },
   formSubTypeControl: {
-    width: '400px',
+    width: '30%',
     margin: 'auto'
   },
   paper: {
     marginTop: '10px',
-    width: '550px',
+    width: '40%',
+    padding: '10px',
+    boxSizing: 'border-box',
     margin: 'auto'
   }
 });
