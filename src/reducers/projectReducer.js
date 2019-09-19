@@ -1,4 +1,4 @@
-export const setProjectProps = (state = '', action) => {
+const projectReducer = (state = '', action) => {
   switch (action.type) {
     case 'SET_TYPE':
       return Object.assign({}, state, {
@@ -12,3 +12,5 @@ export const setProjectProps = (state = '', action) => {
       return state;
   }
 };
+
+export default projectReducer;
