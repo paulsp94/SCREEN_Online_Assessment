@@ -10,7 +10,7 @@ import {
   Typography
 } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
-import { subtypes, descriptions } from '../constants';
+import { projects } from '../constants';
 import { setType, setSubType } from '../actions';
 
 const styles = () => ({
@@ -31,7 +31,13 @@ const styles = () => ({
   }
 });
 
-const StepOne = ({ type, subtype, onTypeChange, onSubTypeChange, classes }) => {
+const ProjectStep = ({
+  type,
+  subtype,
+  onTypeChange,
+  onSubTypeChange,
+  classes
+}) => {
   const handleTypeChange = event => onTypeChange(event.target.value);
   const handleSubTypeChange = event => onSubTypeChange(event.target.value);
 
@@ -53,9 +59,9 @@ const StepOne = ({ type, subtype, onTypeChange, onSubTypeChange, classes }) => {
               />
             }
           >
-            <MenuItem value={1}>Production</MenuItem>
-            <MenuItem value={3}>Consumtion</MenuItem>
-            <MenuItem value={5}>Disposal</MenuItem>
+            {Object.keys(projects).map(key => (
+              <MenuItem value={key}>{key}</MenuItem>
+            ))}
           </Select>
         </FormControl>
         {type && (
@@ -77,13 +83,11 @@ const StepOne = ({ type, subtype, onTypeChange, onSubTypeChange, classes }) => {
                 />
               }
             >
-              {subtypes[type].map((value, i) => {
-                return (
-                  <MenuItem key={i} value={i + 1}>
-                    {value}
-                  </MenuItem>
-                );
-              })}
+              {Object.keys(projects[type]).map(key => (
+                <MenuItem key={key} value={key}>
+                  {key}
+                </MenuItem>
+              ))}
             </Select>
           </FormControl>
         )}
@@ -91,10 +95,10 @@ const StepOne = ({ type, subtype, onTypeChange, onSubTypeChange, classes }) => {
       {subtype && (
         <Paper className={classes.paper} elevation={1}>
           <Typography variant="h6" component="h3">
-            {subtypes[type][subtype - 1]}
+            {subtype}
           </Typography>
           <Typography component="p">
-            {descriptions[type + subtype - 2]}
+            {projects[type][subtype].description}
           </Typography>
         </Paper>
       )}
@@ -103,8 +107,8 @@ const StepOne = ({ type, subtype, onTypeChange, onSubTypeChange, classes }) => {
 };
 
 const mapStateToProps = ({ setProjectProps }) => ({
-  type: setProjectProps.type,
-  subtype: setProjectProps.subtype
+  type: setProjectProps.type || '',
+  subtype: setProjectProps.subtype || ''
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -116,5 +120,5 @@ export default withStyles(styles)(
   connect(
     mapStateToProps,
     mapDispatchToProps
-  )(StepOne)
+  )(ProjectStep)
 );

@@ -8,7 +8,9 @@ import StepContent from '@material-ui/core/StepContent';
 import Button from '@material-ui/core/Button';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
-import StepOne from './StepOne';
+import ProjectStep from './ProjectStep';
+import OptionalsStep from './OptionalsStep';
+import { steps } from '../constants';
 
 const styles = theme => ({
   root: {
@@ -26,20 +28,9 @@ const styles = theme => ({
   }
 });
 
-function getSteps() {
-  return [
-    'Select project type',
-    'Add metrics and additional parameters',
-    'Climate metrics',
-    'Employment metrics',
-    'Circular procurment or educational project'
-  ];
-}
-
 class VerticalLinearStepper extends Component {
   state = {
-    activeStep: 0,
-    type: ''
+    activeStep: 0
   };
 
   handleNext = () => {
@@ -63,7 +54,7 @@ class VerticalLinearStepper extends Component {
   getStepContent = step => {
     switch (step) {
       case 0:
-        return <StepOne />;
+        return <ProjectStep />;
       case 1:
         return 'An ad group contains one or more ads which target a shared set of keywords.';
       case 2:
@@ -71,14 +62,15 @@ class VerticalLinearStepper extends Component {
                 and learn how to enhance your ads using features like ad extensions.
                 If you run into any problems with your ads, find out how to tell if
                 they're running and how to resolve approval issues.`;
+      case 3:
+        return `Employment metrics`;
       default:
-        return 'Unknown step';
+        return <OptionalsStep />;
     }
   };
 
   render() {
     const { classes } = this.props;
-    const steps = getSteps();
     const { activeStep } = this.state;
 
     return (
@@ -97,6 +89,7 @@ class VerticalLinearStepper extends Component {
                     <Button
                       disabled={activeStep === 0}
                       onClick={this.handleBack}
+                      type="button"
                       className={classes.button}
                     >
                       Back
@@ -104,6 +97,7 @@ class VerticalLinearStepper extends Component {
                     <Button
                       variant="contained"
                       color="primary"
+                      type="submit"
                       onClick={this.handleNext}
                       className={classes.button}
                     >
@@ -118,7 +112,11 @@ class VerticalLinearStepper extends Component {
         {activeStep === steps.length && (
           <Paper square elevation={0} className={classes.resetContainer}>
             <Typography>All steps completed - you&apos;re finished</Typography>
-            <Button onClick={this.handleReset} className={classes.button}>
+            <Button
+              onClick={this.handleReset}
+              type="button"
+              className={classes.button}
+            >
               Reset
             </Button>
           </Paper>
