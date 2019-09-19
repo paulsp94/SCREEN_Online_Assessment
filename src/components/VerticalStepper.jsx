@@ -11,6 +11,7 @@ import Typography from '@material-ui/core/Typography';
 import ProjectStep from './ProjectStep';
 import OptionalsStep from './OptionalsStep';
 import { steps } from '../constants';
+import MetricsStep from './MetricsStep';
 
 const styles = theme => ({
   root: {
@@ -56,7 +57,7 @@ class VerticalLinearStepper extends Component {
       case 0:
         return <ProjectStep />;
       case 1:
-        return 'An ad group contains one or more ads which target a shared set of keywords.';
+        return <MetricsStep />;
       case 2:
         return `Try out different ad text to see what brings in the most customers,
                 and learn how to enhance your ads using features like ad extensions.
