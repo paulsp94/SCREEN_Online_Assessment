@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "2a8d35be40fb120e1f79",
+    "revision": "2c9c46e59456ae447f65",
     "url": "/SCREEN_Online_Assessment/static/css/main.837a091d.chunk.css"
   },
   {
-    "revision": "2a8d35be40fb120e1f79",
-    "url": "/SCREEN_Online_Assessment/static/js/main.252659c7.chunk.js"
+    "revision": "2c9c46e59456ae447f65",
+    "url": "/SCREEN_Online_Assessment/static/js/main.cb2fcd4e.chunk.js"
   },
   {
     "revision": "b1ce4a221e848b67700d",
@@ -92,12 +92,12 @@ self.__precacheManifest = [
     "url": "/SCREEN_Online_Assessment/static/media/roboto-latin-700.cf6613d1.woff"
   },
   {
-    "revision": "846d1890aee87fde5d8ced8eba360c3a",
-    "url": "/SCREEN_Online_Assessment/static/media/roboto-latin-700italic.846d1890.woff"
-  },
-  {
     "revision": "010c1aeee3c6d1cbb1d5761d80353823",
     "url": "/SCREEN_Online_Assessment/static/media/roboto-latin-700italic.010c1aee.woff2"
+  },
+  {
+    "revision": "846d1890aee87fde5d8ced8eba360c3a",
+    "url": "/SCREEN_Online_Assessment/static/media/roboto-latin-700italic.846d1890.woff"
   },
   {
     "revision": "19b7a0adfdd4f808b53af7e2ce2ad4e5",
@@ -116,7 +116,7 @@ self.__precacheManifest = [
     "url": "/SCREEN_Online_Assessment/static/media/roboto-latin-900italic.bc833e72.woff"
   },
   {
-    "revision": "3012902515aeb2ba25e8c561297fc565",
+    "revision": "2aaa462af0f0b80a06e4344d5469526d",
     "url": "/SCREEN_Online_Assessment/index.html"
   }
 ];
