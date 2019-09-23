@@ -27,3 +27,13 @@ export const setEmissionReduction = emissionReduction => ({
   type: 'SET_EMISSION_REDUCTION',
   emissionReduction
 });
+
+export const setN = n => ({
+  type: 'SET_N',
+  n
+});
+
+export const setP = p => ({
+  type: 'SET_P',
+  p
+});

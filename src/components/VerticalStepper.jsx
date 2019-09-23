@@ -1,18 +1,19 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import Stepper from '@material-ui/core/Stepper';
-import Step from '@material-ui/core/Step';
-import StepLabel from '@material-ui/core/StepLabel';
-import StepContent from '@material-ui/core/StepContent';
 import Button from '@material-ui/core/Button';
 import Paper from '@material-ui/core/Paper';
+import Step from '@material-ui/core/Step';
+import StepContent from '@material-ui/core/StepContent';
+import StepLabel from '@material-ui/core/StepLabel';
+import Stepper from '@material-ui/core/Stepper';
+import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-import ProjectStep from './ProjectStep';
-import OptionalsStep from './OptionalsStep';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import { steps } from '../constants';
-import MetricsStep from './MetricsStep';
 import ClimateStep from './ClimateStep';
+import EmploymentStep from './EmploymentStep';
+import MetricsStep from './MetricsStep';
+import OptionalsStep from './OptionalsStep';
+import ProjectStep from './ProjectStep';
 
 const styles = theme => ({
   root: {
@@ -62,7 +63,7 @@ class VerticalLinearStepper extends Component {
       case 2:
         return <ClimateStep />;
       case 3:
-        return `Employment metrics`;
+        return <EmploymentStep />;
       default:
         return <OptionalsStep />;
     }
