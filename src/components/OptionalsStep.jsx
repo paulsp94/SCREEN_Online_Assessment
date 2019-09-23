@@ -1,6 +1,8 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { FormControlLabel, Checkbox, Paper } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
+import { setCircularProcurement, setEducational } from '../actions';
 
 const styles = () => ({
   paper: {
@@ -13,25 +15,22 @@ const styles = () => ({
   }
 });
 
-const OptionalsStep = ({ classes }) => {
+const OptionalsStep = ({
+  onTriggerCircularProcurement,
+  onTriggerEducational,
+  classes
+}) => {
   const circularProcurementLink = (
     <a href="http://ec.europa.eu/environment/gpp/circular_procurement_en.htm">
       CIRCULAR PROCUREMENT
     </a>
   );
 
-  const handleChange = () => {};
-
   return (
     <Paper className={classes.paper} elevation={1}>
       <FormControlLabel
         control={
-          <Checkbox
-            checked={false}
-            onChange={handleChange('checkedB')}
-            value="checkedB"
-            color="primary"
-          />
+          <Checkbox onChange={onTriggerCircularProcurement} color="primary" />
         }
         label={
           <span>
@@ -40,18 +39,24 @@ const OptionalsStep = ({ classes }) => {
         }
       />
       <FormControlLabel
-        control={
-          <Checkbox
-            checked={false}
-            onChange={handleChange('checkedB')}
-            value="checkedB"
-            color="primary"
-          />
-        }
+        control={<Checkbox onChange={onTriggerEducational} color="primary" />}
         label="Educational projects targeted to relevant stakeholders"
       />
     </Paper>
   );
 };
 
-export default withStyles(styles)(OptionalsStep);
+const mapDispatchToProps = dispatch => ({
+  onTriggerCircularProcurement: event => {
+    dispatch(setCircularProcurement(event.target.checked));
+    console.log(event);
+  },
+  onTriggerEducational: event => dispatch(setEducational(event.target.checked))
+});
+
+export default withStyles(styles)(
+  connect(
+    null,
+    mapDispatchToProps
+  )(OptionalsStep)
+);

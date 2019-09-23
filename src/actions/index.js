@@ -37,3 +37,13 @@ export const setP = p => ({
   type: 'SET_P',
   p
 });
+
+export const setCircularProcurement = circularProcurement => ({
+  type: 'SET_CIRCULAR_PROCUREMENT',
+  circularProcurement
+});
+
+export const setEducational = educational => ({
+  type: 'SET_EDUCATIONAL',
+  educational
+});

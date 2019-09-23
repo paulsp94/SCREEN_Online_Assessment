@@ -3,10 +3,12 @@ import projectReducer from './projectReducer';
 import metricReducer from './metricReducer';
 import climateReducer from './climateReducer';
 import employmentReducer from './employmentReducer';
+import optionalReducer from './optionalReducer';
 
 export default combineReducers({
   projectReducer,
   metricReducer,
   climateReducer,
-  employmentReducer
+  employmentReducer,
+  optionalReducer
 });
