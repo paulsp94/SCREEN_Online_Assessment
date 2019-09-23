@@ -14,8 +14,10 @@ const styles = () => ({
 });
 
 const OptionalsStep = ({ classes }) => {
-  const link = 'CIRCULAR PROCUREMENT'.link(
-    'http://ec.europa.eu/environment/gpp/circular_procurement_en.htm'
+  const circularProcurementLink = (
+    <a href="http://ec.europa.eu/environment/gpp/circular_procurement_en.htm">
+      CIRCULAR PROCUREMENT
+    </a>
   );
 
   const handleChange = () => {};
@@ -31,7 +33,11 @@ const OptionalsStep = ({ classes }) => {
             color="primary"
           />
         }
-        label={`Implementation of ${link} in the project`}
+        label={
+          <span>
+            Implementation of {circularProcurementLink} in the project
+          </span>
+        }
       />
       <FormControlLabel
         control={
