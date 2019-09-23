@@ -1,23 +1,23 @@
 self.__precacheManifest = [
   {
-    "revision": "2c9c46e59456ae447f65",
+    "revision": "24a20e965b56b9b51f05",
     "url": "/SCREEN_Online_Assessment/static/css/main.837a091d.chunk.css"
   },
   {
-    "revision": "2c9c46e59456ae447f65",
-    "url": "/SCREEN_Online_Assessment/static/js/main.cb2fcd4e.chunk.js"
+    "revision": "24a20e965b56b9b51f05",
+    "url": "/SCREEN_Online_Assessment/static/js/main.f9fcdb42.chunk.js"
   },
   {
     "revision": "b1ce4a221e848b67700d",
     "url": "/SCREEN_Online_Assessment/static/js/runtime~main.dd4dea06.js"
   },
   {
-    "revision": "6680683061d812f10562",
+    "revision": "b0db984f38b5b919b9a5",
     "url": "/SCREEN_Online_Assessment/static/css/2.feb8c5df.chunk.css"
   },
   {
-    "revision": "6680683061d812f10562",
-    "url": "/SCREEN_Online_Assessment/static/js/2.8eecff5b.chunk.js"
+    "revision": "b0db984f38b5b919b9a5",
+    "url": "/SCREEN_Online_Assessment/static/js/2.a2a6feaf.chunk.js"
   },
   {
     "revision": "987b84570ea69ee660455b8d5e91f5f1",
@@ -116,7 +116,7 @@ self.__precacheManifest = [
     "url": "/SCREEN_Online_Assessment/static/media/roboto-latin-900italic.bc833e72.woff"
   },
   {
-    "revision": "2aaa462af0f0b80a06e4344d5469526d",
+    "revision": "7a96b994ed232828de7ff2e578f4d8f7",
     "url": "/SCREEN_Online_Assessment/index.html"
   }
 ];
