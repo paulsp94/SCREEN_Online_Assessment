@@ -12,6 +12,7 @@ import ProjectStep from './ProjectStep';
 import OptionalsStep from './OptionalsStep';
 import { steps } from '../constants';
 import MetricsStep from './MetricsStep';
+import ClimateStep from './ClimateStep';
 
 const styles = theme => ({
   root: {
@@ -59,10 +60,7 @@ class VerticalLinearStepper extends Component {
       case 1:
         return <MetricsStep />;
       case 2:
-        return `Try out different ad text to see what brings in the most customers,
-                and learn how to enhance your ads using features like ad extensions.
-                If you run into any problems with your ads, find out how to tell if
-                they're running and how to resolve approval issues.`;
+        return <ClimateStep />;
       case 3:
         return `Employment metrics`;
       default:

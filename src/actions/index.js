@@ -17,3 +17,13 @@ export const setAdditionalParameter = additionalParameter => ({
   type: 'SET_ADDITIONAL_PARAMETER',
   additionalParameter
 });
+
+export const setEnergyBalance = energyBalance => ({
+  type: 'SET_ENERGY_BALANCE',
+  energyBalance
+});
+
+export const setEmissionReduction = emissionReduction => ({
+  type: 'SET_EMISSION_REDUCTION',
+  emissionReduction
+});
