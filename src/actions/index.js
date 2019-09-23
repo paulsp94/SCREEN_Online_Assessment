@@ -8,12 +8,12 @@ export const setSubType = subType => ({
   subType
 });
 
-export const setMetrics = metrics => ({
-  type: 'SET_METRICS',
-  metrics
+export const setMetric = metric => ({
+  type: 'SET_METRIC',
+  metric
 });
 
-export const setAdditionalParameters = additionalParameters => ({
-  type: 'SET_ADDITIONAL_PARAMETERS',
-  additionalParameters
+export const setAdditionalParameter = additionalParameter => ({
+  type: 'SET_ADDITIONAL_PARAMETER',
+  additionalParameter
 });

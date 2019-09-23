@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Paper, Typography, withStyles, TextField } from '@material-ui/core';
 import { projects } from '../constants';
-import { setAdditionalParameters, setMetrics } from '../actions';
+import { setMetric, setAdditionalParameter } from '../actions';
 
 const styles = () => ({
   paper: {
@@ -15,50 +15,56 @@ const styles = () => ({
   metricDescription: {
     textAlign: 'left'
   },
-  metricsBody: {
+  metricBody: {
     display: 'flex',
     justifyContent: 'space-between'
   }
 });
 
-const MetricsStep = ({ type, subtype, classes }) => {
+const MetricsStep = ({
+  type,
+  subtype,
+  onMetricChange,
+  onAdditionalParameterChange,
+  classes
+}) => {
   return (
     <>
       <Paper className={classes.paper} elevation={1}>
         <Typography variant="h6" component="h3">
-          Metrics
+          Metric
         </Typography>
-        <div className={classes.metricsBody}>
+        <div className={classes.metricBody}>
           <Typography component="p" className={classes.metricDescription}>
-            {type && subtype && projects[type][subtype].metrics}
+            {type && subtype && projects[type][subtype].metric}
           </Typography>
-          <TextField />
+          <TextField onChange={onMetricChange} />
         </div>
       </Paper>
       <Paper className={classes.paper} elevation={1}>
         <Typography variant="h6" component="h3">
           Additional Parameters
         </Typography>
-        <div className={classes.metricsBody}>
+        <div className={classes.metricBody}>
           <Typography component="p" className={classes.metricDescription}>
-            {type && subtype && projects[type][subtype].additionalParameters}
+            {type && subtype && projects[type][subtype].additionalParameter}
           </Typography>
-          <TextField />
+          <TextField onChange={onAdditionalParameterChange} />
         </div>
       </Paper>
     </>
   );
 };
 
-const mapStateToProps = ({ setProjectProps }) => ({
-  type: setProjectProps.type || '',
-  subtype: setProjectProps.subtype || ''
+const mapStateToProps = ({ projectReducer }) => ({
+  type: projectReducer.type || '',
+  subtype: projectReducer.subtype || ''
 });
 
 const mapDispatchToProps = dispatch => ({
-  onMetricsChange: type => dispatch(setMetrics(type)),
-  onAdditionalParametersChange: subtype =>
-    dispatch(setAdditionalParameters(subtype))
+  onMetricChange: event => dispatch(setMetric(event.target.value)),
+  onAdditionalParameterChange: event =>
+    dispatch(setAdditionalParameter(event.target.value))
 });
 
 export default withStyles(styles)(

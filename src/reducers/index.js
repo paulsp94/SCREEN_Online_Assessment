@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
 import projectReducer from './projectReducer';
-import metricsReducer from './metricsReducer';
+import metricReducer from './metricReducer';
 
-export default combineReducers({ projectReducer, metricsReducer });
+export default combineReducers({ projectReducer, metricReducer });

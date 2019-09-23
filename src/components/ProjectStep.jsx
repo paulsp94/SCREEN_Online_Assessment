@@ -106,9 +106,9 @@ const ProjectStep = ({
   );
 };
 
-const mapStateToProps = ({ setProjectProps }) => ({
-  type: setProjectProps.type || '',
-  subtype: setProjectProps.subtype || ''
+const mapStateToProps = ({ projectReducer }) => ({
+  type: projectReducer.type || '',
+  subtype: projectReducer.subtype || ''
 });
 
 const mapDispatchToProps = dispatch => ({
