@@ -1,4 +1,4 @@
-const projectReducer = (state = '', action) => {
+const projectReducer = (state = { type: '', subtype: '' }, action) => {
   switch (action.type) {
     case 'SET_TYPE':
       return Object.assign({}, state, {

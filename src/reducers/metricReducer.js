@@ -1,4 +1,7 @@
-const metricReducer = (state = '', action) => {
+const metricReducer = (
+  state = { metric: '', additionalParameter: '' },
+  action
+) => {
   switch (action.type) {
     case 'SET_METRIC':
       return Object.assign({}, state, {

@@ -1,4 +1,4 @@
-const employmentReducer = (state = '', action) => {
+const employmentReducer = (state = { n: 0, p: 0, employment: 0 }, action) => {
   switch (action.type) {
     case 'SET_N':
       return Object.assign({}, state, {

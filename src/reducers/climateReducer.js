@@ -1,4 +1,7 @@
-const metricReducer = (state = '', action) => {
+const metricReducer = (
+  state = { energyBalance: 0, emissionReduction: 0 },
+  action
+) => {
   switch (action.type) {
     case 'SET_ENERGY_BALANCE':
       return Object.assign({}, state, {
