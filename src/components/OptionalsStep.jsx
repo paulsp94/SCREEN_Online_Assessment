@@ -47,10 +47,8 @@ const OptionalsStep = ({
 };
 
 const mapDispatchToProps = dispatch => ({
-  onTriggerCircularProcurement: event => {
-    dispatch(setCircularProcurement(event.target.checked));
-    console.log(event);
-  },
+  onTriggerCircularProcurement: event =>
+    dispatch(setCircularProcurement(event.target.checked)),
   onTriggerEducational: event => dispatch(setEducational(event.target.checked))
 });
 
