@@ -32,7 +32,7 @@ const styles = theme => ({
   }
 });
 
-const VerticalLinearStepper = ({ onFinish, classes }) => {
+const VerticalLinearStepper = ({ onFinish, assessmentValue, classes }) => {
   const [activeStep, setActiveStep] = useState(0);
 
   const handleNext = () => {
@@ -99,11 +99,10 @@ const VerticalLinearStepper = ({ onFinish, classes }) => {
       </Stepper>
       {activeStep === steps.length && (
         <Paper square elevation={0} className={classes.resetContainer}>
-          <Typography>All steps completed - you&apos;re finished</Typography>
+          <Typography>{assessmentValue}</Typography>
           <Button
             onClick={handleReset}
             type="button"
-            onTriggerEducational
             className={classes.button}
           >
             Reset
@@ -118,7 +117,8 @@ const mapStateToProps = ({
   projectReducer,
   metricReducer,
   climateReducer,
-  employmentReducer
+  employmentReducer,
+  assessmentReducer
 }) => ({
   type: projectReducer.type,
   subtype: projectReducer.subtype,
@@ -126,7 +126,8 @@ const mapStateToProps = ({
   additionalParameter: metricReducer.additionalParameter,
   energyBalance: climateReducer.energyBalance,
   emissionReduction: climateReducer.emissionReduction,
-  employment: employmentReducer.employment
+  employment: employmentReducer.employment,
+  assessmentValue: assessmentReducer.assessmentValue
 });
 
 const mapDispatchToProps = dispatch => ({

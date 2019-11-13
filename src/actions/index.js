@@ -47,3 +47,8 @@ export const setEducational = educational => ({
   type: 'SET_EDUCATIONAL',
   educational
 });
+
+export const calculate = payload => ({
+  type: 'CALCULATE',
+  payload
+});
