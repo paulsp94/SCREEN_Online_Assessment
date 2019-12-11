@@ -13,17 +13,17 @@ export default (state = { assessmentValue: 0 }, action) => {
         employment
       } = action.payload;
       try {
+        const assessmentValue =
+          parseInt(metric, 10) *
+          parseInt(additionalParameter, 10) *
+          parseInt(projects[type][subtype].weight, 10) *
+          parseInt(energyBalance, 10) *
+          parseInt(emissionReduction, 10) *
+          parseInt(employment, 10);
         return Object.assign({}, state, {
-          assessmentValue:
-            parseInt(metric, 10) *
-            parseInt(additionalParameter, 10) *
-            parseInt(projects[type][subtype].weight, 10) *
-            parseInt(energyBalance, 10) *
-            parseInt(emissionReduction, 10) *
-            parseInt(employment, 10)
+          assessmentValue
         });
       } catch (e) {
-        console.error(e);
         return state;
       }
     }

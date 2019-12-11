@@ -7,7 +7,7 @@ import {
   withStyles,
   Divider
 } from '@material-ui/core';
-import { setN, setP } from '../actions';
+import { setN, setP, calculateEmployment } from '../actions';
 
 const styles = () => ({
   paper: {
@@ -66,8 +66,14 @@ const EmploymentStep = ({ onNChange, onPChange, classes }) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  onNChange: event => dispatch(setN(event.target.value)),
-  onPChange: event => dispatch(setP(event.target.value))
+  onNChange: event => {
+    dispatch(setN(event.target.value));
+    dispatch(calculateEmployment());
+  },
+  onPChange: event => {
+    dispatch(setP(event.target.value));
+    dispatch(calculateEmployment());
+  }
 });
 
 export default withStyles(styles)(

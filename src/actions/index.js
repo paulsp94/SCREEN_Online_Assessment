@@ -38,6 +38,10 @@ export const setP = p => ({
   p
 });
 
+export const calculateEmployment = () => ({
+  type: 'CALCULATE_EMPLOYMENT'
+});
+
 export const setCircularProcurement = circularProcurement => ({
   type: 'SET_CIRCULAR_PROCUREMENT',
   circularProcurement

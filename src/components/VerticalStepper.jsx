@@ -99,7 +99,15 @@ const VerticalLinearStepper = ({ onFinish, assessmentValue, classes }) => {
       </Stepper>
       {activeStep === steps.length && (
         <Paper square elevation={0} className={classes.resetContainer}>
-          <Typography>{assessmentValue}</Typography>
+          <Typography>{String(assessmentValue)}</Typography>
+          <Button
+            disabled={activeStep === 0}
+            onClick={handleBack}
+            type="button"
+            className={classes.button}
+          >
+            Back
+          </Button>
           <Button
             onClick={handleReset}
             type="button"
@@ -134,9 +142,10 @@ const mapDispatchToProps = dispatch => ({
   calculate: props => dispatch(calculate(props))
 });
 
-const mergeProps = (state, actions, ownProps) => ({
-  onFinish: () => actions.calculate(state),
-  ...ownProps
+const mergeProps = (stateProps, actions, { classes }) => ({
+  onFinish: () => actions.calculate(stateProps),
+  classes,
+  ...stateProps
 });
 
 export default withStyles(styles)(
