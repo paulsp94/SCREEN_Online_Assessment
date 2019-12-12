@@ -1,38 +1,23 @@
 import React, { useState } from 'react';
-import { connect } from 'react-redux';
-import { withStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
-import Paper from '@material-ui/core/Paper';
-import Step from '@material-ui/core/Step';
-import StepContent from '@material-ui/core/StepContent';
-import StepLabel from '@material-ui/core/StepLabel';
-import Stepper from '@material-ui/core/Stepper';
-import Typography from '@material-ui/core/Typography';
-import { calculate } from '../actions';
-import { steps } from '../constants';
-import ClimateStep from './ClimateStep';
-import EmploymentStep from './EmploymentStep';
-import MetricsStep from './MetricsStep';
-import OptionalsStep from './OptionalStep';
-import ProjectStep from './ProjectStep';
+import {
+  Button,
+  Paper,
+  Step,
+  StepContent,
+  StepLabel,
+  Stepper,
+  Typography
+} from '@material-ui/core';
 
-const styles = theme => ({
-  root: {
-    width: '90%'
-  },
-  button: {
-    marginTop: theme.spacing.unit,
-    marginRight: theme.spacing.unit
-  },
-  actionsContainer: {
-    marginBottom: theme.spacing.unit * 2
-  },
-  resetContainer: {
-    padding: theme.spacing.unit * 3
-  }
-});
+import { steps } from '../../constants';
 
-const VerticalLinearStepper = ({ onFinish, assessmentValue, classes }) => {
+import ClimateStep from '../ClimateStep';
+import EmploymentStep from '../EmploymentStep';
+import MetricsStep from '../MetricsStep';
+import OptionalsStep from '../OptionalStep';
+import ProjectStep from '../ProjectStep';
+
+const VerticalStepper = ({ onFinish, assessmentValue, classes }) => {
   const [activeStep, setActiveStep] = useState(0);
 
   const handleNext = () => {
@@ -121,37 +106,4 @@ const VerticalLinearStepper = ({ onFinish, assessmentValue, classes }) => {
   );
 };
 
-const mapStateToProps = ({
-  projectReducer,
-  metricReducer,
-  climateReducer,
-  employmentReducer,
-  assessmentReducer
-}) => ({
-  type: projectReducer.type,
-  subtype: projectReducer.subtype,
-  metric: metricReducer.metric,
-  additionalParameter: metricReducer.additionalParameter,
-  energyBalance: climateReducer.energyBalance,
-  emissionReduction: climateReducer.emissionReduction,
-  employment: employmentReducer.employment,
-  assessmentValue: assessmentReducer.assessmentValue
-});
-
-const mapDispatchToProps = dispatch => ({
-  calculate: props => dispatch(calculate(props))
-});
-
-const mergeProps = (stateProps, actions, { classes }) => ({
-  onFinish: () => actions.calculate(stateProps),
-  classes,
-  ...stateProps
-});
-
-export default withStyles(styles)(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps,
-    mergeProps
-  )(VerticalLinearStepper)
-);
+export default VerticalStepper;
