@@ -11,7 +11,7 @@ import Typography from '@material-ui/core/Typography';
 import { calculate } from '../actions';
 import { steps } from '../constants';
 import ClimateStep from './ClimateStep';
-import EmploymentStep from './EmploymentStep';
+import EmploymentStep from './EmploymentStep/EmploymentStep';
 import MetricsStep from './MetricsStep';
 import OptionalsStep from './OptionalsStep';
 import ProjectStep from './ProjectStep';
