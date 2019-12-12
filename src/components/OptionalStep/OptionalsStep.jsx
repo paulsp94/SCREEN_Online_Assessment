@@ -1,19 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { FormControlLabel, Checkbox, Paper } from '@material-ui/core';
-import { withStyles } from '@material-ui/core/styles';
-import { setCircularProcurement, setEducational } from '../actions';
-
-const styles = () => ({
-  paper: {
-    width: '40%',
-    padding: '10px',
-    boxSizing: 'border-box',
-    margin: 'auto',
-    display: 'flex',
-    flexDirection: 'column'
-  }
-});
 
 const OptionalsStep = ({
   circularProcurement,
@@ -58,17 +44,4 @@ const OptionalsStep = ({
   );
 };
 
-const mapStateToProps = ({ optionalReducer }) => ({
-  circularProcurement: optionalReducer.circularProcurement,
-  educational: optionalReducer.educational
-});
-
-const mapDispatchToProps = dispatch => ({
-  onTriggerCircularProcurement: event =>
-    dispatch(setCircularProcurement(event.target.checked)),
-  onTriggerEducational: event => dispatch(setEducational(event.target.checked))
-});
-
-export default withStyles(styles)(
-  connect(mapStateToProps, mapDispatchToProps)(OptionalsStep)
-);
+export default OptionalsStep;
