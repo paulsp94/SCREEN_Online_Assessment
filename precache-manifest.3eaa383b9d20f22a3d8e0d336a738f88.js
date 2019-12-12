@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/SCREEN_Online_Assessment/static/media/roboto-latin-300italic.d69924b9.woff2"
   },
   {
-    "revision": "9db4364f6db5ac88c0e9",
+    "revision": "05ea8196f6be1e1f02c6",
     "url": "/SCREEN_Online_Assessment/static/css/main.837a091d.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = [
     "url": "/SCREEN_Online_Assessment/static/js/runtime~main.025d5312.js"
   },
   {
-    "revision": "bc833e725c137257c2c42a789845d82f",
-    "url": "/SCREEN_Online_Assessment/static/media/roboto-latin-900italic.bc833e72.woff"
+    "revision": "7b770d6c53423deb1a8e49d3c9175184",
+    "url": "/SCREEN_Online_Assessment/static/media/roboto-latin-900italic.7b770d6c.woff2"
   },
   {
     "revision": "463970784649fa16c212",
@@ -60,8 +60,8 @@ self.__precacheManifest = [
     "url": "/SCREEN_Online_Assessment/static/media/roboto-latin-300.a1471d1d.woff"
   },
   {
-    "revision": "9db4364f6db5ac88c0e9",
-    "url": "/SCREEN_Online_Assessment/static/js/main.a6af5bc5.chunk.js"
+    "revision": "05ea8196f6be1e1f02c6",
+    "url": "/SCREEN_Online_Assessment/static/js/main.c95565d5.chunk.js"
   },
   {
     "revision": "210a7c781f5a354a0e4985656ab456d9",
@@ -104,19 +104,19 @@ self.__precacheManifest = [
     "url": "/SCREEN_Online_Assessment/static/media/roboto-latin-700italic.846d1890.woff"
   },
   {
-    "revision": "7b770d6c53423deb1a8e49d3c9175184",
-    "url": "/SCREEN_Online_Assessment/static/media/roboto-latin-900italic.7b770d6c.woff2"
-  },
-  {
     "revision": "8c2ade503b34e31430d6c98aa29a52a3",
     "url": "/SCREEN_Online_Assessment/static/media/roboto-latin-900.8c2ade50.woff"
+  },
+  {
+    "revision": "bc833e725c137257c2c42a789845d82f",
+    "url": "/SCREEN_Online_Assessment/static/media/roboto-latin-900italic.bc833e72.woff"
   },
   {
     "revision": "463970784649fa16c212",
     "url": "/SCREEN_Online_Assessment/static/css/2.feb8c5df.chunk.css"
   },
   {
-    "revision": "c07a0186aa50683928a45d6bf5c4b9b1",
+    "revision": "0a735cc738071776c66da17e50f4f963",
     "url": "/SCREEN_Online_Assessment/index.html"
   }
 ];
