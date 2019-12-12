@@ -1,5 +1,5 @@
 const metricReducer = (
-  state = { metric: '', additionalParameter: '' },
+  state = { metric: 0, additionalParameter: 0 },
   action
 ) => {
   switch (action.type) {

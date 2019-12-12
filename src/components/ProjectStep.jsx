@@ -107,8 +107,8 @@ const ProjectStep = ({
 };
 
 const mapStateToProps = ({ projectReducer }) => ({
-  type: projectReducer.type || '',
-  subtype: projectReducer.subtype || ''
+  type: projectReducer.type,
+  subtype: projectReducer.subtype
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -117,8 +117,5 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default withStyles(styles)(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(ProjectStep)
+  connect(mapStateToProps, mapDispatchToProps)(ProjectStep)
 );

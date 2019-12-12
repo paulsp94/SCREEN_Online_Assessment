@@ -33,7 +33,7 @@ const styles = () => ({
   }
 });
 
-const EmploymentStep = ({ onNChange, onPChange, classes }) => {
+const EmploymentStep = ({ n, p, onNChange, onPChange, classes }) => {
   return (
     <Paper className={classes.paper} elevation={1}>
       <Typography variant="h6" component="h3">
@@ -51,19 +51,24 @@ const EmploymentStep = ({ onNChange, onPChange, classes }) => {
               Number of full time <b>new</b> working units in the new process;
               it is negative in case of reduction of personnel
             </Typography>
-            <TextField onChange={onNChange} />
+            <TextField onChange={onNChange} value={n} />
           </div>
           <div className={classes.employmentInput}>
             <Typography component="p" className={classes.employmentDescription}>
               Number of full time working units in the old process
             </Typography>
-            <TextField onChange={onPChange} />
+            <TextField onChange={onPChange} value={p} />
           </div>
         </div>
       </div>
     </Paper>
   );
 };
+
+const mapStateToProps = ({ employmentReducer }) => ({
+  n: employmentReducer.n,
+  p: employmentReducer.p
+});
 
 const mapDispatchToProps = dispatch => ({
   onNChange: event => {
@@ -77,8 +82,5 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default withStyles(styles)(
-  connect(
-    null,
-    mapDispatchToProps
-  )(EmploymentStep)
+  connect(mapStateToProps, mapDispatchToProps)(EmploymentStep)
 );

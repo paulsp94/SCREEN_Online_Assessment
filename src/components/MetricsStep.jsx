@@ -24,6 +24,8 @@ const styles = () => ({
 const MetricsStep = ({
   type,
   subtype,
+  metric,
+  additionalParameter,
   onMetricChange,
   onAdditionalParameterChange,
   classes
@@ -38,7 +40,7 @@ const MetricsStep = ({
           <Typography component="p" className={classes.metricDescription}>
             {type && subtype && projects[type][subtype].metric}
           </Typography>
-          <TextField onChange={onMetricChange} />
+          <TextField onChange={onMetricChange} value={metric} />
         </div>
       </Paper>
       <Paper className={classes.paper} elevation={1}>
@@ -49,16 +51,21 @@ const MetricsStep = ({
           <Typography component="p" className={classes.metricDescription}>
             {type && subtype && projects[type][subtype].additionalParameter}
           </Typography>
-          <TextField onChange={onAdditionalParameterChange} />
+          <TextField
+            onChange={onAdditionalParameterChange}
+            value={additionalParameter}
+          />
         </div>
       </Paper>
     </>
   );
 };
 
-const mapStateToProps = ({ projectReducer }) => ({
+const mapStateToProps = ({ projectReducer, metricReducer }) => ({
   type: projectReducer.type || '',
-  subtype: projectReducer.subtype || ''
+  subtype: projectReducer.subtype || '',
+  metric: metricReducer.metric,
+  additionalParameter: metricReducer.additionalParameter
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -68,8 +75,5 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default withStyles(styles)(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(MetricsStep)
+  connect(mapStateToProps, mapDispatchToProps)(MetricsStep)
 );

@@ -21,7 +21,13 @@ const styles = () => ({
   }
 });
 
-const ClimateStep = ({ onBalanceChange, onEmissionChange, classes }) => {
+const ClimateStep = ({
+  energyBalance,
+  emissionReduction,
+  onBalanceChange,
+  onEmissionChange,
+  classes
+}) => {
   return (
     <>
       <Paper className={classes.paper} elevation={1}>
@@ -34,7 +40,7 @@ const ClimateStep = ({ onBalanceChange, onEmissionChange, classes }) => {
             Energy (KWh) used in the old process per unit of product divided by
             energy used in the new process for the same unit of product
           </Typography>
-          <TextField onChange={onBalanceChange} />
+          <TextField onChange={onBalanceChange} value={energyBalance} />
         </div>
       </Paper>
       <Paper className={classes.paper} elevation={1}>
@@ -47,12 +53,17 @@ const ClimateStep = ({ onBalanceChange, onEmissionChange, classes }) => {
             productdivided by emissions used in the new process for the same
             unit of product
           </Typography>
-          <TextField onChange={onEmissionChange} />
+          <TextField onChange={onEmissionChange} value={emissionReduction} />
         </div>
       </Paper>
     </>
   );
 };
+
+const mapStateToProps = ({ climateReducer }) => ({
+  energyBalance: climateReducer.energyBalance,
+  emissionReduction: climateReducer.emissionReduction
+});
 
 const mapDispatchToProps = dispatch => ({
   onBalanceChange: event => dispatch(setEnergyBalance(event.target.value)),
@@ -60,8 +71,5 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default withStyles(styles)(
-  connect(
-    null,
-    mapDispatchToProps
-  )(ClimateStep)
+  connect(mapStateToProps, mapDispatchToProps)(ClimateStep)
 );

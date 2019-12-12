@@ -16,6 +16,8 @@ const styles = () => ({
 });
 
 const OptionalsStep = ({
+  circularProcurement,
+  educational,
   onTriggerCircularProcurement,
   onTriggerEducational,
   classes
@@ -30,7 +32,11 @@ const OptionalsStep = ({
     <Paper className={classes.paper} elevation={1}>
       <FormControlLabel
         control={
-          <Checkbox onChange={onTriggerCircularProcurement} color="primary" />
+          <Checkbox
+            onChange={onTriggerCircularProcurement}
+            color="primary"
+            checked={circularProcurement}
+          />
         }
         label={
           <span>
@@ -39,12 +45,23 @@ const OptionalsStep = ({
         }
       />
       <FormControlLabel
-        control={<Checkbox onChange={onTriggerEducational} color="primary" />}
+        control={
+          <Checkbox
+            onChange={onTriggerEducational}
+            color="primary"
+            checked={educational}
+          />
+        }
         label="Educational projects targeted to relevant stakeholders"
       />
     </Paper>
   );
 };
+
+const mapStateToProps = ({ optionalReducer }) => ({
+  circularProcurement: optionalReducer.circularProcurement,
+  educational: optionalReducer.educational
+});
 
 const mapDispatchToProps = dispatch => ({
   onTriggerCircularProcurement: event =>
@@ -53,8 +70,5 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default withStyles(styles)(
-  connect(
-    null,
-    mapDispatchToProps
-  )(OptionalsStep)
+  connect(mapStateToProps, mapDispatchToProps)(OptionalsStep)
 );
