@@ -1,25 +1,6 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { Paper, Typography, withStyles, TextField } from '@material-ui/core';
-import { projects } from '../constants';
-import { setMetric, setAdditionalParameter } from '../actions';
-
-const styles = () => ({
-  paper: {
-    marginTop: '10px',
-    width: '40%',
-    padding: '10px',
-    boxSizing: 'border-box',
-    margin: 'auto'
-  },
-  metricDescription: {
-    textAlign: 'left'
-  },
-  metricBody: {
-    display: 'flex',
-    justifyContent: 'space-between'
-  }
-});
+import { Paper, Typography, TextField } from '@material-ui/core';
+import { projects } from '../../constants';
 
 const MetricsStep = ({
   type,
@@ -61,19 +42,4 @@ const MetricsStep = ({
   );
 };
 
-const mapStateToProps = ({ projectReducer, metricReducer }) => ({
-  type: projectReducer.type || '',
-  subtype: projectReducer.subtype || '',
-  metric: metricReducer.metric,
-  additionalParameter: metricReducer.additionalParameter
-});
-
-const mapDispatchToProps = dispatch => ({
-  onMetricChange: event => dispatch(setMetric(event.target.value)),
-  onAdditionalParameterChange: event =>
-    dispatch(setAdditionalParameter(event.target.value))
-});
-
-export default withStyles(styles)(
-  connect(mapStateToProps, mapDispatchToProps)(MetricsStep)
-);
+export default MetricsStep;
