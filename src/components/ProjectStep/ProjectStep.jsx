@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import {
   FormControl,
   Select,
@@ -9,27 +8,7 @@ import {
   Paper,
   Typography
 } from '@material-ui/core';
-import { withStyles } from '@material-ui/core/styles';
-import { projects } from '../constants';
-import { setType, setSubType } from '../actions';
-
-const styles = () => ({
-  formTypeControl: {
-    width: '10%',
-    margin: 'auto'
-  },
-  formSubTypeControl: {
-    width: '30%',
-    margin: 'auto'
-  },
-  paper: {
-    marginTop: '10px',
-    width: '40%',
-    padding: '10px',
-    boxSizing: 'border-box',
-    margin: 'auto'
-  }
-});
+import { projects } from '../../constants';
 
 const ProjectStep = ({
   type,
@@ -106,16 +85,4 @@ const ProjectStep = ({
   );
 };
 
-const mapStateToProps = ({ projectReducer }) => ({
-  type: projectReducer.type,
-  subtype: projectReducer.subtype
-});
-
-const mapDispatchToProps = dispatch => ({
-  onTypeChange: type => dispatch(setType(type)),
-  onSubTypeChange: subtype => dispatch(setSubType(subtype))
-});
-
-export default withStyles(styles)(
-  connect(mapStateToProps, mapDispatchToProps)(ProjectStep)
-);
+export default ProjectStep;

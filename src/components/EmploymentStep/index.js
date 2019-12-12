@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { withStyles } from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core';
 
 import { setN, setP, calculateEmployment } from '../../actions';
 
