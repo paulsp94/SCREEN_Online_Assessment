@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/SCREEN_Online_Assessment/static/media/roboto-latin-300italic.d69924b9.woff2"
   },
   {
-    "revision": "c23828f1140a91db6def",
+    "revision": "ad5cade1571560b262e1",
     "url": "/SCREEN_Online_Assessment/static/css/main.03ac662e.chunk.css"
   },
   {
@@ -60,8 +60,8 @@ self.__precacheManifest = [
     "url": "/SCREEN_Online_Assessment/static/media/roboto-latin-300.a1471d1d.woff"
   },
   {
-    "revision": "c23828f1140a91db6def",
-    "url": "/SCREEN_Online_Assessment/static/js/main.46d3c2fb.chunk.js"
+    "revision": "ad5cade1571560b262e1",
+    "url": "/SCREEN_Online_Assessment/static/js/main.f80ca2da.chunk.js"
   },
   {
     "revision": "210a7c781f5a354a0e4985656ab456d9",
@@ -116,7 +116,7 @@ self.__precacheManifest = [
     "url": "/SCREEN_Online_Assessment/static/css/2.feb8c5df.chunk.css"
   },
   {
-    "revision": "714effe9c01402a5bbf6850208cc11bc",
+    "revision": "3fb637d1ec108e87358880546892d059",
     "url": "/SCREEN_Online_Assessment/index.html"
   }
 ];
